@@ -1,0 +1,416 @@
+#modbus:
+  - name: pw11-og
+    type: tcp
+    host: 192.168.111.63
+    port: 502
+    
+    sensors:
+      - name: pw11-og_serial_number
+        input_type: holding
+        slave: 1
+        address: 0
+        state_class: measurement
+        scan_interval: 60
+            
+      - name: pw11-og_meter_id
+        input_type: holding
+        slave: 1
+        address: 2
+        state_class: measurement
+        scan_interval: 60
+            
+      - name: pw11-og_baud_rate
+        input_type: holding
+        slave: 1
+        address: 3
+        state_class: measurement
+#        unit_of_measurement: bps
+        scan_interval: 60
+            
+      - name: pw11-og_software_version
+        input_type: holding
+        slave: 1
+        address: 4
+        state_class: measurement
+        data_type: float32
+        scan_interval: 60
+            
+      - name: pw11-og_hardware_version
+        input_type: holding
+        slave: 1
+        address: 6
+        state_class: measurement
+        data_type: float32
+        scan_interval: 60
+            
+      - name: pw11-og_ct_rate
+        input_type: holding
+        slave: 1
+        address: 8
+        state_class: measurement
+        scan_interval: 60
+            
+      - name: pw11-og_s0_output_rate
+        input_type: holding
+        slave: 1
+        address: 9
+        unit_of_measurement: imp/kWh
+        state_class: measurement
+        data_type: float32
+        scan_interval: 60
+        scale: 1
+        precision: 0
+
+      - name: pw11-og_combined_code
+        input_type: holding
+        slave: 1
+        address: 11
+        state_class: measurement
+        scan_interval: 60
+            
+      - name: pw11-og_holiday_weekend_t
+        input_type: holding
+        slave: 1
+        address: 12
+        state_class: measurement
+        scan_interval: 60
+            
+      - name: pw11-og_cycle_time
+        input_type: holding
+        slave: 1
+        address: 13
+        unit_of_measurement: s
+        state_class: measurement
+        scan_interval: 60
+
+##################################################################
+
+      - name: pw11-og_l1_voltage
+        input_type: holding
+        slave: 1
+        address: 14
+        unit_of_measurement: V
+        device_class: voltage
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+            
+      - name: pw11-og_l2_voltage
+        input_type: holding
+        slave: 1
+        address: 16
+        unit_of_measurement: V
+        device_class: voltage
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+      
+      - name: pw11-og_l3_voltage
+        input_type: holding
+        slave: 1
+        address: 18
+        unit_of_measurement: V
+        device_class: voltage
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+
+##################################################################
+
+      - name: pw11-og_grid_frequency
+        input_type: holding
+        slave: 1
+        address: 20
+        unit_of_measurement: Hz
+        device_class: frequency
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+
+##################################################################
+
+      - name: pw11-og_l1_current
+        input_type: holding
+        slave: 1
+        address: 22
+        unit_of_measurement: A
+        device_class: current
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+      
+      - name: pw11-og_l2_current
+        input_type: holding
+        slave: 1
+        address: 24
+        unit_of_measurement: A
+        device_class: current
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+      
+      - name: pw11-og_l3_current
+        input_type: holding
+        slave: 1
+        address: 26
+        unit_of_measurement: A
+        device_class: current
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+
+##################################################################
+
+      - name: pw11-og_total_active_power
+        input_type: holding
+        slave: 1
+        address: 28
+        unit_of_measurement: kW
+        device_class: power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 60
+        scale: 1
+        precision: 2
+      
+      - name: pw11-og_l1_active_power
+        input_type: holding
+        slave: 1
+        address: 30
+        unit_of_measurement: W
+        device_class: power
+        state_class: measurement
+        data_type: float32
+        scale: 1
+        precision: 2
+        scan_interval: 10
+      
+      - name: pw11-og_l2_active_power
+        input_type: holding
+        slave: 1
+        address: 32
+        unit_of_measurement: W
+        device_class: power
+        state_class: measurement
+        data_type: float32
+        scale: 1
+        precision: 2
+        scan_interval: 10
+
+      - name: pw11-og_l3_active_power
+        input_type: holding
+        slave: 1
+        address: 34
+        unit_of_measurement: kW
+        device_class: power
+        state_class: measurement
+        data_type: float32
+        scale: 1
+        precision: 2
+        scan_interval: 10
+
+##################################################################
+
+      - name: pw11-og_total_reactive_power
+        input_type: holding
+        slave: 1
+        address: 36
+        unit_of_measurement: kVar
+        device_class: reactive_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: pw11-og_l1_reactive_power
+        input_type: holding
+        slave: 1
+        address: 38
+        unit_of_measurement: kVar
+        device_class: reactive_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: pw11-og_l2_reactive_power
+        input_type: holding
+        slave: 1
+        address: 40
+        unit_of_measurement: kVar
+        device_class: reactive_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: pw11-og_l3_reactive_power
+        input_type: holding
+        slave: 1
+        address: 42
+        unit_of_measurement: kVar
+        device_class: reactive_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+##################################################################
+
+      - name: pw11-og_total_apparent_power
+        input_type: holding
+        slave: 1
+        address: 44
+        unit_of_measurement: kVA
+        device_class: apparent_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: pw11-og_l1_apparent_power
+        input_type: holding
+        slave: 1
+        address: 46
+        unit_of_measurement: kVA
+        device_class: apparent_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: pw11-og_l2_apparent_power
+        input_type: holding
+        slave: 1
+        address: 48
+        unit_of_measurement: kVA
+        device_class: apparent_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: pw11-og_l3_apparent_power
+        input_type: holding
+        slave: 1
+        address: 50
+        unit_of_measurement: kVA
+        device_class: apparent_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+##################################################################
+
+      - name: pw11-og_total_power_factor
+        input_type: holding
+        slave: 1
+        address: 52
+        device_class: power_factor
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: pw11-og_l1_power_factor
+        input_type: holding
+        slave: 1
+        address: 54
+        device_class: power_factor
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: pw11-og_l2_power_factor
+        input_type: holding
+        slave: 1
+        address: 56
+        device_class: power_factor
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: pw11-og_l3_power_factor
+        input_type: holding
+        slave: 1
+        address: 58
+        device_class: power_factor
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+##################################################################
+
+      - name: pw11-og_time
+        input_type: holding
+        slave: 1
+        address: 60
+        #device_class: timestamp
+        #state_class: measurement
+        scan_interval: 300
+
+##################################################################
+
+      - name: pw11-og_total_active_energy
+        input_type: holding
+        slave: 1
+        address: 256
+        unit_of_measurement: kWh
+        device_class: energy
+        state_class: total_increasing
+        data_type: float32
+        scan_interval: 60
+        scale: 1
+        precision: 2
+
+      - name: pw11-og_l1_total_active_energy
+        input_type: holding
+        slave: 1
+        address: 258
+        unit_of_measurement: kWh
+        device_class: energy
+        state_class: total_increasing
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: pw11-og_l2_total_active_energy
+        input_type: holding
+        slave: 1
+        address: 260
+        unit_of_measurement: kWh
+        device_class: energy
+        state_class: total_increasing
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+      
+      - name: pw11-og_l3_total_active_energy
+        input_type: holding
+        slave: 1
+        address: 262
+        unit_of_measurement: kWh
+        device_class: energy
+        state_class: total_increasing
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
