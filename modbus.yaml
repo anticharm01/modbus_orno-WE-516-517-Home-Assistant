@@ -1,25 +1,25 @@
 #modbus:
-  - name: pw11-og
+  - name: we517
     type: tcp
-    host: 192.168.111.63
+    host: 192.168.222.111
     port: 502
     
     sensors:
-      - name: pw11-og_serial_number
+      - name: we517_serial_number
         input_type: holding
         slave: 1
         address: 0
         state_class: measurement
         scan_interval: 60
             
-      - name: pw11-og_meter_id
+      - name: we517_meter_id
         input_type: holding
         slave: 1
         address: 2
         state_class: measurement
         scan_interval: 60
             
-      - name: pw11-og_baud_rate
+      - name: we517_baud_rate
         input_type: holding
         slave: 1
         address: 3
@@ -27,7 +27,7 @@
 #        unit_of_measurement: bps
         scan_interval: 60
             
-      - name: pw11-og_software_version
+      - name: we517_software_version
         input_type: holding
         slave: 1
         address: 4
@@ -35,7 +35,7 @@
         data_type: float32
         scan_interval: 60
             
-      - name: pw11-og_hardware_version
+      - name: we517_hardware_version
         input_type: holding
         slave: 1
         address: 6
@@ -43,14 +43,14 @@
         data_type: float32
         scan_interval: 60
             
-      - name: pw11-og_ct_rate
+      - name: we517_ct_rate
         input_type: holding
         slave: 1
         address: 8
         state_class: measurement
         scan_interval: 60
             
-      - name: pw11-og_s0_output_rate
+      - name: we517_s0_output_rate
         input_type: holding
         slave: 1
         address: 9
@@ -61,21 +61,21 @@
         scale: 1
         precision: 0
 
-      - name: pw11-og_combined_code
+      - name: we517_combined_code
         input_type: holding
         slave: 1
         address: 11
         state_class: measurement
         scan_interval: 60
             
-      - name: pw11-og_holiday_weekend_t
+      - name: we517_holiday_weekend_t
         input_type: holding
         slave: 1
         address: 12
         state_class: measurement
         scan_interval: 60
             
-      - name: pw11-og_cycle_time
+      - name: we517_cycle_time
         input_type: holding
         slave: 1
         address: 13
@@ -85,7 +85,7 @@
 
 ##################################################################
 
-      - name: pw11-og_l1_voltage
+      - name: we517_l1_voltage
         input_type: holding
         slave: 1
         address: 14
@@ -95,7 +95,7 @@
         data_type: float32
         scan_interval: 10
             
-      - name: pw11-og_l2_voltage
+      - name: we517_l2_voltage
         input_type: holding
         slave: 1
         address: 16
@@ -105,7 +105,7 @@
         data_type: float32
         scan_interval: 10
       
-      - name: pw11-og_l3_voltage
+      - name: we517_l3_voltage
         input_type: holding
         slave: 1
         address: 18
@@ -117,7 +117,7 @@
 
 ##################################################################
 
-      - name: pw11-og_grid_frequency
+      - name: we517_grid_frequency
         input_type: holding
         slave: 1
         address: 20
@@ -129,7 +129,7 @@
 
 ##################################################################
 
-      - name: pw11-og_l1_current
+      - name: we517_l1_current
         input_type: holding
         slave: 1
         address: 22
@@ -139,7 +139,7 @@
         data_type: float32
         scan_interval: 10
       
-      - name: pw11-og_l2_current
+      - name: we517_l2_current
         input_type: holding
         slave: 1
         address: 24
@@ -149,7 +149,7 @@
         data_type: float32
         scan_interval: 10
       
-      - name: pw11-og_l3_current
+      - name: we517_l3_current
         input_type: holding
         slave: 1
         address: 26
@@ -161,7 +161,7 @@
 
 ##################################################################
 
-      - name: pw11-og_total_active_power
+      - name: we517_total_active_power
         input_type: holding
         slave: 1
         address: 28
@@ -173,7 +173,7 @@
         scale: 1
         precision: 2
       
-      - name: pw11-og_l1_active_power
+      - name: we517_l1_active_power
         input_type: holding
         slave: 1
         address: 30
@@ -185,7 +185,7 @@
         precision: 2
         scan_interval: 10
       
-      - name: pw11-og_l2_active_power
+      - name: we517_l2_active_power
         input_type: holding
         slave: 1
         address: 32
@@ -197,7 +197,7 @@
         precision: 2
         scan_interval: 10
 
-      - name: pw11-og_l3_active_power
+      - name: we517_l3_active_power
         input_type: holding
         slave: 1
         address: 34
@@ -211,7 +211,7 @@
 
 ##################################################################
 
-      - name: pw11-og_total_reactive_power
+      - name: we517_total_reactive_power
         input_type: holding
         slave: 1
         address: 36
@@ -223,7 +223,7 @@
         scale: 1
         precision: 2
 
-      - name: pw11-og_l1_reactive_power
+      - name: we517_l1_reactive_power
         input_type: holding
         slave: 1
         address: 38
@@ -235,7 +235,7 @@
         scale: 1
         precision: 2
 
-      - name: pw11-og_l2_reactive_power
+      - name: we517_l2_reactive_power
         input_type: holding
         slave: 1
         address: 40
@@ -247,7 +247,7 @@
         scale: 1
         precision: 2
 
-      - name: pw11-og_l3_reactive_power
+      - name: we517_l3_reactive_power
         input_type: holding
         slave: 1
         address: 42
@@ -261,7 +261,7 @@
 
 ##################################################################
 
-      - name: pw11-og_total_apparent_power
+      - name: we517_total_apparent_power
         input_type: holding
         slave: 1
         address: 44
@@ -273,7 +273,7 @@
         scale: 1
         precision: 2
 
-      - name: pw11-og_l1_apparent_power
+      - name: we517_l1_apparent_power
         input_type: holding
         slave: 1
         address: 46
@@ -285,7 +285,7 @@
         scale: 1
         precision: 2
 
-      - name: pw11-og_l2_apparent_power
+      - name: we517_l2_apparent_power
         input_type: holding
         slave: 1
         address: 48
@@ -297,7 +297,7 @@
         scale: 1
         precision: 2
 
-      - name: pw11-og_l3_apparent_power
+      - name: we517_l3_apparent_power
         input_type: holding
         slave: 1
         address: 50
@@ -311,7 +311,7 @@
 
 ##################################################################
 
-      - name: pw11-og_total_power_factor
+      - name: we517_total_power_factor
         input_type: holding
         slave: 1
         address: 52
@@ -322,7 +322,7 @@
         scale: 1
         precision: 2
 
-      - name: pw11-og_l1_power_factor
+      - name: we517_l1_power_factor
         input_type: holding
         slave: 1
         address: 54
@@ -333,7 +333,7 @@
         scale: 1
         precision: 2
 
-      - name: pw11-og_l2_power_factor
+      - name: we517_l2_power_factor
         input_type: holding
         slave: 1
         address: 56
@@ -344,7 +344,7 @@
         scale: 1
         precision: 2
 
-      - name: pw11-og_l3_power_factor
+      - name: we517_l3_power_factor
         input_type: holding
         slave: 1
         address: 58
@@ -357,7 +357,7 @@
 
 ##################################################################
 
-      - name: pw11-og_time
+      - name: we517_time
         input_type: holding
         slave: 1
         address: 60
@@ -367,7 +367,7 @@
 
 ##################################################################
 
-      - name: pw11-og_total_active_energy
+      - name: we517_total_active_energy
         input_type: holding
         slave: 1
         address: 256
@@ -379,7 +379,7 @@
         scale: 1
         precision: 2
 
-      - name: pw11-og_l1_total_active_energy
+      - name: we517_total_active_energy
         input_type: holding
         slave: 1
         address: 258
@@ -391,7 +391,7 @@
         scale: 1
         precision: 2
 
-      - name: pw11-og_l2_total_active_energy
+      - name: we517_l2_total_active_energy
         input_type: holding
         slave: 1
         address: 260
@@ -403,7 +403,7 @@
         scale: 1
         precision: 2
       
-      - name: pw11-og_l3_total_active_energy
+      - name: we517_l3_total_active_energy
         input_type: holding
         slave: 1
         address: 262
