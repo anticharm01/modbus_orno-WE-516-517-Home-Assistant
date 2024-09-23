@@ -1,93 +1,179 @@
-  # EG Werkstatt orno OR-WE-516     
-modbus:
-  - name: or-we-517_1
+#modbus:
+  - name: we517
     type: tcp
-    host: 192.168.178.95
+    host: 192.168.222.111
     port: 502
-    retry_on_empty: true
-    # retries: 10
-    # close_comm_on_error: true
-    delay: 5
-    # timeout: 5
+    
     sensors:
-      - name: or-we-517_L1_V
+      - name: we517_serial_number
+        input_type: holding
+        slave: 1
+        address: 0
+        state_class: measurement
+        scan_interval: 60
+            
+      - name: we517_meter_id
+        input_type: holding
+        slave: 1
+        address: 2
+        state_class: measurement
+        scan_interval: 60
+            
+      - name: we517_baud_rate
+        input_type: holding
+        slave: 1
+        address: 3
+        state_class: measurement
+#        unit_of_measurement: bps
+        scan_interval: 60
+            
+      - name: we517_software_version
+        input_type: holding
+        slave: 1
+        address: 4
+        state_class: measurement
+        data_type: float32
+        scan_interval: 60
+            
+      - name: we517_hardware_version
+        input_type: holding
+        slave: 1
+        address: 6
+        state_class: measurement
+        data_type: float32
+        scan_interval: 60
+            
+      - name: we517_ct_rate
+        input_type: holding
+        slave: 1
+        address: 8
+        state_class: measurement
+        scan_interval: 60
+            
+      - name: we517_s0_output_rate
+        input_type: holding
+        slave: 1
+        address: 9
+        unit_of_measurement: imp/kWh
+        state_class: measurement
+        data_type: float32
+        scan_interval: 60
+        scale: 1
+        precision: 0
+
+      - name: we517_combined_code
+        input_type: holding
+        slave: 1
+        address: 11
+        state_class: measurement
+        scan_interval: 60
+            
+      - name: we517_holiday_weekend_t
+        input_type: holding
+        slave: 1
+        address: 12
+        state_class: measurement
+        scan_interval: 60
+            
+      - name: we517_cycle_time
+        input_type: holding
+        slave: 1
+        address: 13
+        unit_of_measurement: s
+        state_class: measurement
+        scan_interval: 60
+
+##################################################################
+
+      - name: we517_l1_voltage
         input_type: holding
         slave: 1
         address: 14
         unit_of_measurement: V
-        device_class: Voltage
+        device_class: voltage
         state_class: measurement
-        count: 2
         data_type: float32
         scan_interval: 10
             
-      - name: or-we-517_L2_V
+      - name: we517_l2_voltage
         input_type: holding
         slave: 1
         address: 16
         unit_of_measurement: V
-        device_class: Voltage
+        device_class: voltage
         state_class: measurement
-        count: 2
         data_type: float32
         scan_interval: 10
       
-      - name: or-we-517_L3_V
+      - name: we517_l3_voltage
         input_type: holding
         slave: 1
         address: 18
         unit_of_measurement: V
-        device_class: Voltage
+        device_class: voltage
         state_class: measurement
-        count: 2
         data_type: float32
         scan_interval: 10
-      
-      - name: or-we-517_L1_A
-        input_type: holding
-        slave: 1
-        address: 22
-        unit_of_measurement: A
-        device_class: Current
-        state_class: measurement
-        count: 2
-        data_type: float32
-        scan_interval: 10
-      
-      - name: or-we-517_L2_A
-        input_type: holding
-        slave: 1
-        address: 24
-        unit_of_measurement: A
-        device_class: Current
-        state_class: measurement
-        count: 2
-        data_type: float32
-        scan_interval: 10
-      
-      - name: or-we-517_L3_A
-        input_type: holding
-        slave: 1
-        address: 26
-        unit_of_measurement: A
-        device_class: Current
-        state_class: measurement
-        count: 2
-        data_type: float32
-        scan_interval: 10
-      
-      - name: or-we-517_frequenz
+
+##################################################################
+
+      - name: we517_grid_frequency
         input_type: holding
         slave: 1
         address: 20
         unit_of_measurement: Hz
         device_class: frequency
         state_class: measurement
-        count: 2
         data_type: float32
         scan_interval: 10
-    
-      - name: or-we-517_activ_power_L1
+
+##################################################################
+
+      - name: we517_l1_current
+        input_type: holding
+        slave: 1
+        address: 22
+        unit_of_measurement: A
+        device_class: current
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+      
+      - name: we517_l2_current
+        input_type: holding
+        slave: 1
+        address: 24
+        unit_of_measurement: A
+        device_class: current
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+      
+      - name: we517_l3_current
+        input_type: holding
+        slave: 1
+        address: 26
+        unit_of_measurement: A
+        device_class: current
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+
+##################################################################
+
+      - name: we517_total_active_power
+        input_type: holding
+        slave: 1
+        address: 28
+        unit_of_measurement: kW
+        device_class: power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 60
+        scale: 1
+        precision: 2
+      
+      - name: we517_l1_active_power
         input_type: holding
         slave: 1
         address: 30
@@ -97,10 +183,9 @@ modbus:
         data_type: float32
         scale: 1
         precision: 2
-        count: 2
         scan_interval: 10
       
-      - name: or-we-517_activ_power_L2
+      - name: we517_l2_active_power
         input_type: holding
         slave: 1
         address: 32
@@ -110,10 +195,9 @@ modbus:
         data_type: float32
         scale: 1
         precision: 2
-        count: 2
         scan_interval: 10
 
-      - name: or-we-517_activ_power_L3
+      - name: we517_l3_active_power
         input_type: holding
         slave: 1
         address: 34
@@ -123,68 +207,209 @@ modbus:
         data_type: float32
         scale: 1
         precision: 2
-        count: 2
         scan_interval: 10
-      
-      - name: or-we-517_wirkleistung_summe
+
+##################################################################
+
+      - name: we517_total_reactive_power
         input_type: holding
         slave: 1
-        address: 28
-        unit_of_measurement: kW
-        device_class: power
+        address: 36
+        unit_of_measurement: kVar
+        device_class: reactive_power
         state_class: measurement
         data_type: float32
         scan_interval: 10
         scale: 1
         precision: 2
-      
-      - name: or-we-517_wirkarbeit
+
+      - name: we517_l1_reactive_power
+        input_type: holding
+        slave: 1
+        address: 38
+        unit_of_measurement: kVar
+        device_class: reactive_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: we517_l2_reactive_power
+        input_type: holding
+        slave: 1
+        address: 40
+        unit_of_measurement: kVar
+        device_class: reactive_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: we517_l3_reactive_power
+        input_type: holding
+        slave: 1
+        address: 42
+        unit_of_measurement: kVar
+        device_class: reactive_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+##################################################################
+
+      - name: we517_total_apparent_power
+        input_type: holding
+        slave: 1
+        address: 44
+        unit_of_measurement: kVA
+        device_class: apparent_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: we517_l1_apparent_power
+        input_type: holding
+        slave: 1
+        address: 46
+        unit_of_measurement: kVA
+        device_class: apparent_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: we517_l2_apparent_power
+        input_type: holding
+        slave: 1
+        address: 48
+        unit_of_measurement: kVA
+        device_class: apparent_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: we517_l3_apparent_power
+        input_type: holding
+        slave: 1
+        address: 50
+        unit_of_measurement: kVA
+        device_class: apparent_power
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+##################################################################
+
+      - name: we517_total_power_factor
+        input_type: holding
+        slave: 1
+        address: 52
+        device_class: power_factor
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: we517_l1_power_factor
+        input_type: holding
+        slave: 1
+        address: 54
+        device_class: power_factor
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: we517_l2_power_factor
+        input_type: holding
+        slave: 1
+        address: 56
+        device_class: power_factor
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+      - name: we517_l3_power_factor
+        input_type: holding
+        slave: 1
+        address: 58
+        device_class: power_factor
+        state_class: measurement
+        data_type: float32
+        scan_interval: 10
+        scale: 1
+        precision: 2
+
+##################################################################
+
+      - name: we517_time
+        input_type: holding
+        slave: 1
+        address: 60
+        #device_class: timestamp
+        #state_class: measurement
+        scan_interval: 300
+
+##################################################################
+
+      - name: we517_total_active_energy
         input_type: holding
         slave: 1
         address: 256
         unit_of_measurement: kWh
         device_class: energy
         state_class: total_increasing
-        count: 2
         data_type: float32
         scan_interval: 60
         scale: 1
         precision: 2
-      
-      - name: or-we-517_L1_Total_Active_Energy
+
+      - name: we517_total_active_energy
         input_type: holding
         slave: 1
         address: 258
         unit_of_measurement: kWh
         device_class: energy
         state_class: total_increasing
-        count: 2
         data_type: float32
         scan_interval: 10
         scale: 1
         precision: 2
-      
-      - name: or-we-517_L2_Total_Active_Energy
+
+      - name: we517_l2_total_active_energy
         input_type: holding
         slave: 1
         address: 260
         unit_of_measurement: kWh
         device_class: energy
         state_class: total_increasing
-        count: 2
         data_type: float32
         scan_interval: 10
         scale: 1
         precision: 2
       
-      - name: or-we-517_L3_Total_Active_Energy
+      - name: we517_l3_total_active_energy
         input_type: holding
         slave: 1
         address: 262
         unit_of_measurement: kWh
         device_class: energy
         state_class: total_increasing
-        count: 2
         data_type: float32
         scan_interval: 10
         scale: 1
