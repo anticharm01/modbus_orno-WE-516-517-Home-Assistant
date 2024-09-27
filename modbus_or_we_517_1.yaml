@@ -24,7 +24,7 @@
         slave: 1
         address: 3
         state_class: measurement
-#        unit_of_measurement: bps
+        unit_of_measurement: bps
         scan_interval: 60
             
       - name: we517_software_version
@@ -81,6 +81,7 @@
         address: 13
         unit_of_measurement: s
         state_class: measurement
+        data_type: int16
         scan_interval: 60
 
 ##################################################################
@@ -361,9 +362,11 @@
         input_type: holding
         slave: 1
         address: 60
-        #device_class: timestamp
-        #state_class: measurement
-        scan_interval: 300
+        data_type: custom
+        structure: "=8B"
+        count: 4
+        scan_interval: 10
+        precision: 0
 
 ##################################################################
 
@@ -379,7 +382,7 @@
         scale: 1
         precision: 2
 
-      - name: we517_total_active_energy
+      - name: we517_l1_total_active_energy
         input_type: holding
         slave: 1
         address: 258
