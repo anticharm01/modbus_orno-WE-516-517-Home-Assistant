@@ -1,13 +1,12 @@
   - platform: template
     sensors:
-      pw11_og_system_time:
-        value_template: "{{ '20%02x' % (states('sensor.pw11_og_time').split(',')[6] )| int }}-{{ '%02x' % (states('sensor.pw11_og_time').split(',')[5] )| int }}-{{ '%02x' % (states('sensor.pw11_og_time').split(',')[4] )| int }} {{ '%02x' % (states('sensor.pw11_og_time').split(',')[2] ) | int }}:{{ '%02x' % (states('sensor.pw11_og_time').split(',')[1] )| int }}:{{ '%02x' % (states('sensor.pw11_og_time').split(',')[0] )| int }}"
+      we517_system_time:
+        value_template: "{{ '20%02x' % (states('sensor.we517_time').split(',')[6] )| int }}-{{ '%02x' % (states('sensor.we517_time').split(',')[5] )| int }}-{{ '%02x' % (states('sensor.we517_time').split(',')[4] )| int }} {{ '%02x' % (states('sensor.we517_time').split(',')[2] ) | int }}:{{ '%02x' % (states('sensor.we517_time').split(',')[1] )| int }}:{{ '%02x' % (states('sensor.we517_time').split(',')[0] )| int }}"
         icon_template: mdi:clock
 
   - platform: template
     sensors:
-      pw11_og_display_cycle_time:
-        value_template: "{{ '%0x' % (states('sensor.pw11_og_cycle_time'))| int }}"
+      we517_display_cycle_time:
+        value_template: "{{ '%0x' % (states('sensor.we517_cycle_time'))| int }}"
         unit_of_measurement: s
         icon_template: mdi:clock
-
