@@ -178,7 +178,7 @@
         input_type: holding
         slave: 1
         address: 30
-        unit_of_measurement: W
+        unit_of_measurement: kW
         device_class: power
         state_class: measurement
         data_type: float32
@@ -190,7 +190,7 @@
         input_type: holding
         slave: 1
         address: 32
-        unit_of_measurement: W
+        unit_of_measurement: kW
         device_class: power
         state_class: measurement
         data_type: float32
