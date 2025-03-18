@@ -24,7 +24,7 @@
         slave: 1
         address: 3
         state_class: measurement
-        unit_of_measurement: bps
+        # unit_of_measurement: bps
         scan_interval: 60
             
       - name: we517_software_version
